@@ -3,7 +3,9 @@
 
     <!-- <a href="http://localhost:8080/type">Tipos</a> -->
     <!-- <router-link to="http://localhost:8080/type/">Tipos</router-link> -->
-    <router-link :to="{ name: 'list-element' }">Elementos</router-link>
+    <n-button type="primary">
+        <router-link :to="{ name: 'save-element' }">Crear</router-link>
+    </n-button>
 
     <n-table :bordered="false" class="my-table">
         <thead>
@@ -20,6 +22,9 @@
                 <td>
                     <n-button type="primary">
                         <router-link :to="{ name: 'detail-element', params:{ slug: e.url_clean } }">Ver</router-link>
+                    </n-button>
+                    <n-button type="primary">
+                        <router-link :to="{ name: 'save-element', params:{ id: e.id } }">Editar</router-link>
                     </n-button>
                 </td>
             </tr>

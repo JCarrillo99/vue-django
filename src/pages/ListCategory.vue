@@ -3,7 +3,10 @@
 
     <!-- <a href="http://localhost:8080/type">Tipos</a> -->
     <!-- <router-link to="http://localhost:8080/type/">Tipos</router-link> -->
-    <router-link :to="{ name: 'list-type' }">Tipos</router-link>
+    <n-button>
+        <router-link :to="{ name: 'save-category' }">Crear</router-link>
+    </n-button>
+
 
     <n-table :bordered="false" class="my-table">
         <thead>
@@ -18,6 +21,9 @@
                 <td>
                     <n-button>
                         <router-link :to="{ name: 'list-element', params:{ type:'c', id:c.id} }">Elementos</router-link>
+                    </n-button>
+                    <n-button>
+                        <router-link :to="{ name: 'save-category', params:{ id:c.id} }">Editar</router-link>
                     </n-button>
                 </td>
             </tr>
